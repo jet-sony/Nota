@@ -5,7 +5,7 @@
   - `self._env.step(ctrl_result.env_action)` | `APIVisionEnv.step()` : `/home/dev/sai/apps/gt/python/gt/env/gt_env.py` @ L500 (0.099)
     - Everything else (0.009)
     - `self._act_and_get_obs_extended(action, prev_obs)` | `/home/dev/sai/apps/gt/python/gt/env/gt_env.py` @ L572 | `/home/dev/sai/apps/gt/python/gt/env/gt_env.py` @ L1481 (0.09)
-      - `super()._act_and_get_obs(action, prev_obs)` : `/home/dev/sai/apps/gt/python/gt/env/gt_env.py` @ L1257
+      - `super()._act_and_get_obs(action, prev_obs)` : `/home/dev/sai/apps/gt/python/gt/env/gt_env.py` @ L1257 (0.084)
 
       - `self._add_latest_image_to_obs(obs)` | `/home/dev/sai/apps/gt/python/gt/env/gt_env.py` @ L1487
     
