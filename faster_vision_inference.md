@@ -13,11 +13,13 @@ VisionProcessor._base_processor = CompositeMultiInputStateProcessor\
 ```
 
 - `OnePreprocessorMultipleModels` broadcasts observations to all models
-- `MultiInputStatePreprocessor`  h
+- `MultiInputStatePreprocessor`  
 
 ------------------------
 
 ### `jet/faster_inference`
+
+Memory Usage Base: 2.948 GB
 
 #### Before Fix (first 100 steps)
 
