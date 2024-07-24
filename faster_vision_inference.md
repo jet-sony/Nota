@@ -28,4 +28,5 @@ Total time spent in steps: 3.991
 #### After Fix (first 100 steps)
 
 Total time spent in steps: 4.20
+Memory Usage Base: 4.291 GB
 
