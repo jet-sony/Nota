@@ -12,6 +12,7 @@ cps.append(time.time())
 looptimes = np.array(cps)[1:] - np.array(cps)[:-1]
 self.timestats = (self.timestats * self.counts  + np.array([*looptimes, looptimes.sum()])) / (self.counts + 1)
 self.counts += 1
+print(self.timestats)
 
 ```
 
