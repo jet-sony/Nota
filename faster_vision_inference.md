@@ -1,10 +1,20 @@
 ## Performance w/ policy + 19 identical pretrained
 
-### Before Fix (first 100 steps)
+### `jet/faster_inference2`
+
+Vision Runs Preprocessor Structure:
+
+
+
+------------------------
+
+### `jet/faster_inference`
+
+#### Before Fix (first 100 steps)
 
 Total time spent in steps: 3.991
 
-### After Fix (first 100 steps)
+#### After Fix (first 100 steps)
 
 Total time spent in steps: 4.20
 
