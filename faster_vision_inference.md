@@ -4,7 +4,10 @@
 
 Vision Runs Preprocessor Structure:
 
-
+```
+VisionProcessor._base_processor = CompositeMultiInputStateProcessor\
+  CompositeMultiInputStateProcessor.processors
+```
 
 ------------------------
 
