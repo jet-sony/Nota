@@ -1,4 +1,6 @@
-# Dart GT Profiling
+# GT Profiling
+
+### 1 Pretrained across 19 cars
 
 - `Driver.step` : `/home/dev/sai/libs/sail/python/sail/ctrl/driver.py` @ L85 (0.176)
   - `self._controller.step(self._p_obs)` (0.033)
