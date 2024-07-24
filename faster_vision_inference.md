@@ -1,4 +1,4 @@
-## Performance
+## Performance w/ policy + 19 identical pretrained
 
 ### Before Fix (first 100 steps)
 
