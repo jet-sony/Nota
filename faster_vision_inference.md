@@ -7,9 +7,13 @@ Vision Runs Preprocessor Structure:
 ```
 VisionProcessor._base_processor = CompositeMultiInputStateProcessor\
   CompositeMultiInputStateProcessor.processors = [
-    
+    OnePreprocessorMultipleModels,
+    MultiInputStatePreprocessor,
   ]
 ```
+
+- `OnePreprocessorMultipleModels` broadcasts observations to all models
+- `MultiInputStatePreprocessor`  h
 
 ------------------------
 
