@@ -2,7 +2,7 @@
 
 ### Before Fix (first 100 steps)
 
-Total time spent in steps: 
+Total time spent in steps: 3.991
 
 ### After Fix (first 100 steps)
 
