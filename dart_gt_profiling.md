@@ -19,7 +19,7 @@ print(self.timestats)
 ### 1 Pretrained across 19 cars
 
 - `Driver.step` : `/home/dev/sai/libs/sail/python/sail/ctrl/driver.py` @ L85 (0.180)
-  - `self._controller.step(self._p_obs)` (0.047)
+  - `self._controller.step(self._p_obs)` (0.0470)
   - `self._env.step(ctrl_result.env_action)` | `APIVisionEnv.step()` : `/home/dev/sai/apps/gt/python/gt/env/gt_env.py` @ L500 (0.10)
     - Everything else (0.009)
     - `self._act_and_get_obs_extended(action, prev_obs)` | `/home/dev/sai/apps/gt/python/gt/env/gt_env.py` @ L572 | `/home/dev/sai/apps/gt/python/gt/env/gt_env.py` @ L1481 (0.0986)
@@ -33,7 +33,12 @@ print(self.timestats)
 ### BIAI
 
 - `Driver.step` : `/home/dev/sai/libs/sail/python/sail/ctrl/driver.py` @ L85 (0.141)
-  - `self._controller.step(self._p_obs)` (0.0187)
+  - `self._controller.step(self._p_obs)` | `MultiModelController.step()` : `/home/dev/sai/libs/sail/python/sail/unstable/ctrl/multi_model_controller.py` @ L115 (0.0187)
+    - `name_to_inputs` splicing @ L127 (negligible)
+    - `self._forwarder.step` @ L135 (0.007)
+    - `self._action_merger.step` @ L137 (0.0008)
+    - `aux.update(merged_states) @ L149 (0.0005)
+    - `aux.update(self._pp_result.aux)` @ L158 (0.0083)
   - `self._env.step(ctrl_result.env_action)` | `APIVisionEnv.step()` : `/home/dev/sai/apps/gt/python/gt/env/gt_env.py` @ L500 (0.101)
     - Everything else (0.009)
     - `self._act_and_get_obs_extended(action, prev_obs)` | `/home/dev/sai/apps/gt/python/gt/env/gt_env.py` @ L572 | `/home/dev/sai/apps/gt/python/gt/env/gt_env.py` @ L1481 (0.0995)
