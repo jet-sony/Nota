@@ -34,5 +34,5 @@ ie: scale down original image, add noise.
 **Reverse diffusion** process is formally defined as:
 
 $$
-  p_\theta (x_{t-1} | x_t) = \mathcal{N} (\mu_\theta (x_t, t), 
+  p_\theta (x_{t-1} | x_t) = \mathcal{N} (\mu_\theta (x_t, t), \Sigma_\theta (x_t, t))
 $$
