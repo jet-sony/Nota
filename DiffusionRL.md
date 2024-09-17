@@ -88,13 +88,13 @@ Conditional diffusion is just diffusion, but instead of passing only $t$ to the 
 
 ## Diffusion Policies - Diffusion for Behaviour Cloning [$_1$](https://arxiv.org/pdf/2303.04137v4)
 
-** Why is BC hard?**
+### Why is BC hard?
 
 - Multimodal action distributions
 - Distribution shift in low data regimes
 - Idle actions - during the start of demonstrations, there may be timesteps where no actions are taken. 1 step BC tends to overfit to this and careful clipping of trajectories must happen.
 
-**How does it work?**
+### How does it work?
 
 - Predict a sequence of actions, $x_t = (a_0, a_1, a_2, ..., a_n)$.
   - Paper uses $n = 16$.
@@ -103,7 +103,7 @@ Conditional diffusion is just diffusion, but instead of passing only $t$ to the 
 - Use transformer to condition on history.
   - Paper uses observation horizon = 2, action horizon = 8.
  
-**What are the benefits?**
+### What are the benefits?
 
 - High dimension output space - we can now predict actions for many steps into the future
 ![.images/8eeedb60-f748-41c6-a5b3-92946e189f3f.png](.images/8eeedb60-f748-41c6-a5b3-92946e189f3f.png)
@@ -111,16 +111,37 @@ Conditional diffusion is just diffusion, but instead of passing only $t$ to the 
 - Stable training - not sure if this is a perk because behaviour cloning already uses static distributions
 - Can use direct position control - leverage the power of low level optimal control for robot positioning and RL for high level control
 
- **Experiments**
+### Experiments
 
 - Franka Kitchen, 566 demonstrations across 4 tasks
 - Sauce pouring, 50 demonstrations
 
 
-**Results**
+### Results
 
 ![.images/c110a213-ae6b-497f-9c68-db9e18de7432.png](.images/c110a213-ae6b-497f-9c68-db9e18de7432.png)
 ![.images/c107c074-8e1b-449b-82c8-bf834fd13186.png](.images/c107c074-8e1b-449b-82c8-bf834fd13186.png)
+
+### Limitations
+
+Offline RL > BC
+
+---
+---
+---
+
+## Classifier Guided Diffusion
+
+What if we wanted to guide diffusion toward particular distributions within the training data during inference?
+This would work to a limited extent for conditional diffusion, but won't give _complete flexibility_.
+
+Assuming we have a classifier model that can give us gradients (such as CLIP), we can perform **classifier guided diffusion** instead.
+Essentially, we modify the sampling step to be:
+
+$$
+  x_{t-1} = denoise(x_t) + \lambda \nabla_x_i}
+$$
+
 
 
 
