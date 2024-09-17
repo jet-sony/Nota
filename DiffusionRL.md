@@ -21,3 +21,12 @@ where $q$ is the noising process
 - Because you're not constrained by distributions that limit representation power:
   - VAE, VQVAE
 - Autoregressive in manifold space, not output space.
+
+### Some Math
+
+Forward diffusion (noising) process is formally defined as:
+
+$$
+  q(x | x_{t-1}) = \mathcal{N} (\sqrt{1 - \beta_t} x_{t-1}, \beta_t I)
+$$
+ie: scale down original image, add noise.
