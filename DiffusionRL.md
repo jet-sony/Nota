@@ -42,3 +42,13 @@ $$
     x_t - \frac{\beta_t}{\sqrt{1 - \alpha_i}} \epsilon_\theta(x_t, t) 
   \right)
 $$
+ie: we predict the noise scaled and offset by some scheduler.
+
+**The optimization objective** is to generally optimize the ELBO:
+$$
+  \mathbb{E}_q \left[ 
+    log \frac{p_\theta (x_{0:T})}{q_T}
+p_\theta (x_{0:T}
+) 
+  \right]
+$$
