@@ -157,11 +157,7 @@ Ie: we use the gradients of the classification model to nudge the diffusion proc
 ## Classifier Free Diffusion [$_1$](https://arxiv.org/abs/2207.12598)
 
 All big and popular image generation models use this.
-Basically, we condition the diffusion model on an embedding vector (usually obtained from CLIP), and then alternate between with-embedding and without-embedding steps:
-
-$$
-
-$$
+Basically, we condition the diffusion model on an embedding vector (usually obtained from CLIP), and then alternate between with-embedding and without-embedding steps.
 
 
 
