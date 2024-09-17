@@ -97,6 +97,10 @@ Diffusion gives us these benefits:
 - Explainability - we can see what the policy is about to do
 - Stable training - not sure if this is a perk because behaviour cloning already uses static distributions
 
+**How does it works**
+
+We try to predict a sequence of actions
+
 
 
 
