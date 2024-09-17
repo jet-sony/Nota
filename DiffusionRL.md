@@ -18,4 +18,6 @@ where $q$ is the noising process
 
 **Why does this matter?**
 
-- Because you're not constrained by arbitrary distributions.
+- Because you're not constrained by distributions that limit representation power:
+  - VAE, VQVAE
+- Autoregressive in manifold space, not output space.
