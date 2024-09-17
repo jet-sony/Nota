@@ -1,6 +1,6 @@
 # Diffusion Reinforcement Learning
 
-## What is diffusion?
+## What is diffusion? [$_1$](https://arxiv.org/abs/2105.05233)
 
 We define the target distribution as a chain of denoising processes:
 
@@ -21,6 +21,10 @@ where $q$ is the noising process
 - Because you're not constrained by distributions that limit representation power:
   - VAE, VQVAE
 - Autoregressive in manifold space, not output space.
+
+**How does this compare to other generative models? [Lilian Weng](https://lilianweng.github.io/posts/2021-07-11-diffusion-models/)**
+
+![.images/cda3cde1-3d25-4bb9-83a9-a25f41501aaa.png](.images/cda3cde1-3d25-4bb9-83a9-a25f41501aaa.png)
 
 ---
 
@@ -78,8 +82,19 @@ Conditional diffusion is just diffusion, but instead of passing only $t$ to the 
 
 ---
 ---
+---
 
-## Diffusion 
+## Diffusion Policies - Diffusion for Behaviour Cloning [$_1$](https://arxiv.org/pdf/2303.04137v4)
+
+Behaviour Cloning is hard because:
+- We need to avoid mode-covering behaviour (multimodel action distributions)
+- Distribution shift in low data regimes
+
+Diffusion gives us these benefits:
+- High dimension output space - we can now predict actions for many steps into the future
+- Explainability - we can see what the policy is about to do
+- Stable training - not sure if this is a perk because behaviour cloning already uses static distributions
+
 
 
 
