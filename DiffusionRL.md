@@ -52,3 +52,10 @@ p_\theta (x_{0:T}
 ) 
   \right]
 $$
+Which just boils down to:
+$$
+  \mathcal{L} = \mathbb{E}_{t \sim \mathcal{U}, \epsilon \sim \mathcal{N}(0, I), (x_0) \sim \mathcal{D}}
+    \left[ 
+      || \epsilon - \epsilon_\theta (\sqrt\alpha_t x_t + \sqrt{1 - \alpha_t} \epsilon, x_t, t) || ^ 2
+    \right]
+$$
