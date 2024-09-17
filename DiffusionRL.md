@@ -36,3 +36,9 @@ ie: scale down original image, add noise.
 $$
   p_\theta (x_{t-1} | x_t) = \mathcal{N} (\mu_\theta (x_t, t), \Sigma_\theta (x_t, t))
 $$
+where the mean predictor is a predictor for just the noise:
+$$
+  \mu_\theta (x_t, t) = \frac{1}{\alpha_t} \left(
+    x_t - \frac{\beta_t}{\sqrt{1 - \alpha_i}} \epsilon_\theta(x_t, t) 
+  \right)
+$$
