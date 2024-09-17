@@ -139,8 +139,10 @@ Assuming we have a classifier model that can give us gradients (such as CLIP), w
 Essentially, we modify the sampling step to be:
 
 $$
-  x_{t-1} = denoise(x_t) + \lambda \nabla_x_i}
+  x_{t-1} = denoise(x_t) + \lambda \nabla_{x_i} \log f_\phi (c | x_t) 
 $$
+where $f_\phi$ is a categorial classifier and $c$ is the class category.
+Ie: we use the gradients of the classification model to nudge the diffusion process.
 
 
 
