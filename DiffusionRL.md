@@ -59,3 +59,9 @@ $$
       || \epsilon - \epsilon_\theta (\sqrt\alpha_t x_t + \sqrt{1 - \alpha_t} \epsilon, x_t, t) || ^ 2
     \right]
 $$
+ie: sample data, apply random noise schedule, predict noise.
+
+**During sampling**, we first sample $x_T \sim \mathcal{N} (0, I)$, then do:
+$$
+  
+$$
