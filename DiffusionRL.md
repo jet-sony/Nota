@@ -24,9 +24,15 @@ where $q$ is the noising process
 
 ### Some Math
 
-Forward diffusion (noising) process is formally defined as:
+**Forward diffusion** (noising) process is formally defined as:
 
 $$
   q(x | x_{t-1}) = \mathcal{N} (\sqrt{1 - \beta_t} x_{t-1}, \beta_t I)
 $$
 ie: scale down original image, add noise.
+
+**Reverse diffusion** process is formally defined as:
+
+$$
+  p_\theta (x_{t-1} | x_t) = \mathcal{N} (\mu_\theta (x_t, t), 
+$$
