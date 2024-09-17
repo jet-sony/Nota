@@ -97,10 +97,11 @@ Diffusion gives us these benefits:
 - High dimension output space - we can now predict actions for many steps into the future
 - Explainability - we can see what the policy is about to do
 - Stable training - not sure if this is a perk because behaviour cloning already uses static distributions
+- Can use direct position control - leverage the power of low level optimal control for robot positioning and RL for high level control
 
-**How does it works**
+**How does it work?**
 
-We try to predict a sequence of actions
+We try to predict a sequence of actions, $x_t = (x_0, x_1, x_2, ...).
 
 
 
