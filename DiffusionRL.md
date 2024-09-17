@@ -117,6 +117,12 @@ Conditional diffusion is just diffusion, but instead of passing only $t$ to the 
 - Sauce pouring, 50 demonstrations
 
 
+**Results**
+
+![.images/c110a213-ae6b-497f-9c68-db9e18de7432.png](.images/c110a213-ae6b-497f-9c68-db9e18de7432.png)
+![.images/c107c074-8e1b-449b-82c8-bf834fd13186.png](.images/c107c074-8e1b-449b-82c8-bf834fd13186.png)
+
+
 
 
 
