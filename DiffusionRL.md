@@ -130,7 +130,7 @@ Offline RL > BC
 ---
 ---
 
-## Classifier Guided Diffusion
+## Classifier Guided Diffusion [$_1$](https://arxiv.org/abs/2105.05233)
 
 What if we wanted to guide diffusion toward particular distributions within the training data during inference?
 This would work to a limited extent for conditional diffusion, but won't give _complete flexibility_.
@@ -143,6 +143,18 @@ $$
 $$
 where $f_\phi$ is a categorial classifier and $c$ is the class category.
 Ie: we use the gradients of the classification model to nudge the diffusion process.
+
+### Advantages
+
+- Class Control
+- High quality samples
+
+### Disadvantages
+
+- Expensive to compute - one full backward pass per step
+- Less creativity
+
+## Classifier Free Diffusion [$_1$](https://arxiv.org/abs/2207.12598)
 
 
 
