@@ -79,6 +79,7 @@ Conditional diffusion is just diffusion, but instead of passing only $t$ to the 
 ---
 ---
 
+## Diffusion 
 
 
 
