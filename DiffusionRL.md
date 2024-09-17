@@ -110,7 +110,9 @@ Diffusion gives us these benefits:
  
  **Experiments**
 
-
+- Franka Kitchen, 566 demonstrations across 4 tasks
+- Sauce pouring, 50 demonstrations
+- 
 
 
 
