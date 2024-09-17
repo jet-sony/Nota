@@ -22,6 +22,8 @@ where $q$ is the noising process
   - VAE, VQVAE
 - Autoregressive in manifold space, not output space.
 
+---
+
 ### Some Math
 
 **Forward diffusion** (noising) process is formally defined as:
@@ -66,3 +68,10 @@ $$
   x_{t-1} | x_t = \frac{x_t}{\sqrt{\alpha_t}} - \frac{\beta_t}{\sqrt{\alpha_t (1 - \alpha_t)}} \epsilon_\theta (x_t, t) + \sqrt{\beta_t} \epsilon\\
 $$
 where $\epsilon \sim \mathcal{N}(0, I)$ at every step.
+There are various methods of scheduling $\beta_t$.
+
+---
+
+### Extension to Conditional Diffusion
+
+Conditional diffusion is just diffusion, but instead of passing only $t$ to the denoising model, we also pass in a context vector.
