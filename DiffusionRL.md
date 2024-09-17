@@ -89,7 +89,7 @@ Conditional diffusion is just diffusion, but instead of passing only $t$ to the 
 ## Diffusion Policies - Diffusion for Behaviour Cloning [$_1$](https://arxiv.org/pdf/2303.04137v4)
 
 Behaviour Cloning is hard because:
-- We need to avoid mode-covering behaviour (multimodel action distributions)
+- Multimodal action distributions
 - Distribution shift in low data regimes
 - Idle actions - during the start of demonstrations, there may be timesteps where no actions are taken. 1 step BC tends to overfit to this and careful clipping of trajectories must happen.
 
