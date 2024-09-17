@@ -2,5 +2,5 @@
   "theme": "one-dark-pro",
   "autoSaveIntervalSec": 60,
   "colorMode": "default",
-  "vimMode": true
+  "vimMode": false
 }
