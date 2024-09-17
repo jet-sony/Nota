@@ -101,7 +101,16 @@ Diffusion gives us these benefits:
 
 **How does it work?**
 
-We try to predict a sequence of actions, $x_t = (x_0, x_1, x_2, ...).
+- Predict a sequence of actions, $x_t = (a_0, a_1, a_2, ..., a_n)$.
+  - Paper uses $n = 16$.
+- Condition on visual observation.
+  - Paper uses embedding vector from ResNet19, 76x76 image or 288x216 image.
+- Use transformer to condition on history.
+  - Paper uses observation horizon = 2, action horizon = 8.
+ 
+ **Experiments**
+
+
 
 
 
