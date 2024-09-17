@@ -88,16 +88,11 @@ Conditional diffusion is just diffusion, but instead of passing only $t$ to the 
 
 ## Diffusion Policies - Diffusion for Behaviour Cloning [$_1$](https://arxiv.org/pdf/2303.04137v4)
 
-Behaviour Cloning is hard because:
+** Why is BC hard?**
+
 - Multimodal action distributions
 - Distribution shift in low data regimes
 - Idle actions - during the start of demonstrations, there may be timesteps where no actions are taken. 1 step BC tends to overfit to this and careful clipping of trajectories must happen.
-
-Diffusion gives us these benefits:
-- High dimension output space - we can now predict actions for many steps into the future
-- Explainability - we can see what the policy is about to do
-- Stable training - not sure if this is a perk because behaviour cloning already uses static distributions
-- Can use direct position control - leverage the power of low level optimal control for robot positioning and RL for high level control
 
 **How does it work?**
 
@@ -108,11 +103,18 @@ Diffusion gives us these benefits:
 - Use transformer to condition on history.
   - Paper uses observation horizon = 2, action horizon = 8.
  
+**What are the benefits?**
+
+- High dimension output space - we can now predict actions for many steps into the future
+![.images/8eeedb60-f748-41c6-a5b3-92946e189f3f.png](.images/8eeedb60-f748-41c6-a5b3-92946e189f3f.png)
+- Explainability - we can see what the policy is about to do
+- Stable training - not sure if this is a perk because behaviour cloning already uses static distributions
+- Can use direct position control - leverage the power of low level optimal control for robot positioning and RL for high level control
+
  **Experiments**
 
 - Franka Kitchen, 566 demonstrations across 4 tasks
 - Sauce pouring, 50 demonstrations
-- 
 
 
 
