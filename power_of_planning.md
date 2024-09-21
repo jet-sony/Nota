@@ -26,7 +26,19 @@
 
 - With planning, prediction accuracy of human moves is better than without planning.
 
-### Takeaways
+### Planning in LLMs
+
+- Minerva is a math dataset test, most models struggle to get > 40% correct.
+- Deepmind used consensus to get over 50% performance.
+  - Consensus is where you generate many samples and select the best one (how?)
+- Best-of-N beats consensus, but you need a reward model.
+  - Best-of-N generates many samples and rates the output with a reward model.
+- Let's Verify Step-by-Step
+  - Perform MCTS with language, then use the output result to apply rewards to the branches that lead to correct results.
+
+
+### Self Thoughts
 
 - Planning works _SUPER_ well for NP hard problems, ie: math, programming, puzzles.
 - Human reasoning is in general an NP hard problem.
+- Have we reached the limit of scaling? Planning seems to be the next thing forward.
