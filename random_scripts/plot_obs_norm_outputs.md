@@ -52,5 +52,5 @@ class ObsNormBlock(DSDLayer, tf.keras.layers.Layer):
         # HACK IN BLOCK END
 
         return outputs
-
+ h
 ```
