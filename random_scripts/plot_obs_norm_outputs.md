@@ -30,7 +30,7 @@ class ObsNormBlock(DSDLayer, tf.keras.layers.Layer):
             self.accumulator_before.append(inputs.numpy())
             self.accumulator_after.append(outputs.numpy())
 
-        if self.counter > 150:
+        if self.counter > 500:
             if self.obs_key == "obs":
                 import matplotlib.pyplot as plt
                 before_values = np.concatenate(self.accumulator_before, axis=0)
