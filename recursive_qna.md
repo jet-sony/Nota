@@ -56,54 +56,14 @@ As a core contributor:
 In order of most to less interested:
 
 - Reinforcement learning - discovering solutions from thin air is always exciting to me, especially if he solutions are non-intuitive
-- Large Language Models - I used to be less warm to this, but after Google's seminal paper on [scaling test time compute](https://arxiv.org/abs/2408.03314)
+- Large Language Models - I used to be less warm to this, but after Google's seminal paper on [scaling test time compute](https://arxiv.org/abs/2408.03314) and how it relates to MCTS in the RL literature, this is pretty exciting
+- Generative Modelling - Diffusion models are incredibly fascinating to me in that they can be viewed as an infinite-step variational inference process on the true data distribution.
 
-## Please share any academic publications you might have in the field of machine learning (optional)
+## Please share any academic publications you might have in the field of machine learning
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-I don't have any public facing web of mobile applications that can be accessed immediately beyond [my personal file server](https://jjshoots.ddns.net:8190/) available 1000 to 1600 JST everyday.
-However, I have many open source projects that are being used by multiple communities.
-
-As an author, some highlight project include:
-- [Remote ID Spoofer](https://github.com/jjshoots/RemoteIDSpoofer) - a proof of concept project to prove that the current Remote ID implementation for UAV tracking is a badly implemented solution to a terrible idea.
-- [PyFlyt](https://taijunjet.com/PyFlyt/documentation.html) - a UAV simulation tool for reinforcement learning.
-- [SAMTool](https://github.com/jjshoots/SAMtool) - a segmentation dataset creation tool powered by Meta's Segment Anything Model that can be hosted in the browser.
-
-As a core contributor:
-- [PettingZoo](https://pettingzoo.farama.org/index.html) - an API standard for multi-agent reinforcement learning
-- 
-
-## Please share which fields in AI are you most interested in working on and why?
-## Please share any academic publications you might have in the field of machine learning (optional)
+- Some supervision required: Incorporating oracle policies in reinforcement learning via epistemic uncertainty metrics
+- FasteNet: a fast railway fastener detector
+- Bobby2: Buffer based robust high-speed object tracking
 
 
 
