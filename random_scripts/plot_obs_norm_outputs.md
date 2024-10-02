@@ -1,6 +1,6 @@
 # To be placed in `obs_norm.py`
 
-Put this in `/home/dev/sai/apps/gt/scripts/expt/versus/nt_contextual_multi_policy.py`
+Put this in `/home/dev/sai/apps/gt/python/gt/expt/versus/flow/__main__.py`
 
 ```py
 tf.config.run_functions_eagerly(True)
