@@ -1,18 +1,5 @@
 # To be placed in `obs_norm.py`
 
-Put this in `/home/dev/sai/apps/gt/python/gt/expt/versus/flow/__main__.pyg`
-
-```py
-tf.config.run_functions_eagerly(True)
-```
-
-Put this in `obs_norm.py`
-
-```py
-    counter: int = 0
-    accumulator: list[np.ndarray] = []
-```
-
 ```py
 class ObsNormBlock(DSDLayer, tf.keras.layers.Layer):
     num_batch_dims: int
@@ -30,6 +17,8 @@ class ObsNormBlock(DSDLayer, tf.keras.layers.Layer):
         self.counter: int = 0
         self.accumulator_before: list[np.ndarray] = []
         self.accumulator_after: list[np.ndarray] = []
+        import tensorflow as tf
+        tf.config.run_functions_eagerly(True)
         # HACK IN BLOCK END
 
     def call(self, inputs: TFND, **kwargs: Any) -> tf.Tensor:
@@ -40,9 +29,6 @@ class ObsNormBlock(DSDLayer, tf.keras.layers.Layer):
         # HACK IN BLOCK START
         self.counter += 1
         if self.counter > 100:
-            if self.accumulator_before:
-                assert np.all(inputs.numpy().shape == self.accumulator_before[-1].shape),
-                f"{inputs.numpy().shape}, {self.obs_key}, {self.accumulator_before[-1].shape}"
             self.accumulator_before.append(inputs.numpy())
             self.accumulator_after.append(outputs.numpy())
 
@@ -65,5 +51,4 @@ class ObsNormBlock(DSDLayer, tf.keras.layers.Layer):
         # HACK IN BLOCK END
 
         return outputs
-
 ```
