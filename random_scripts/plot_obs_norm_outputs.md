@@ -23,7 +23,7 @@ Put this in `obs_norm.py`
         if self.counter > 10:
             self.accumulator.append(outputs.numpy())
 
-        if self.counter > 300:
+        if self.counter > 1000:
             accumulated_values = np.concatenate(self.accumulator, axis=0)
             print("Obs key:")
             print(self.obs_key)
