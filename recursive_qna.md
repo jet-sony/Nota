@@ -1,4 +1,5 @@
 # Recursive QnA
+
 ## What about Recursive's mission appeals to you?
 
 AI is the new hot term in the past decade, and probably the next many years to come.
@@ -21,9 +22,64 @@ Recursive feels like a very natural step up from these projects, and I'm excited
 
 ## Share one thing you have learned over the past year, and how it has impacted your personal development.
 
-
+_"Have the courage to listen with the notion that your preconceptions are wrong."_
+Personally, this chord strikes particularly well, especially when travelling across multiple countries and dabbling in multiple projects.
+All too often I approach a problem or topic thinking that I can plan 2-3 steps ahead in a very detailed manner, but there have been many times where I find that the best thing to do is to just plan for 1 step ahead, prove the hypothesis, and then replan for the next step ahead.
+This happens even in conversation with people, where I assume I understand what someone is talking about and can be eager to jump to the next topic, when in reality, the best thing to do is to get them to repeat what they've mentioned but from a different angle.
+I believe, in the conversational setting, this is called "active listening".
+As a result, I find that now I can be more present in conversations, and way more deliberate in my planning, because the time horizon is much closer, and I can pack more thought into it.
 
 ## What are your personal growth goals for the next five years?
-## Have you worked on publicly available web or mobile applications you can share? If so, please explain in what capacity you have contributed. 
+
+Probably the biggest first step is to settle down in one country.
+Having called 3 countries my home in the past 5 years has been enlightening but also tiring.
+There is a sense of impermanense attached to most things in my present life because of this, and I think settling down is a big step 1.
+Beyond that, from a career perspective, I think I am still excited to be learning.
+So ideally, the next 5 years for me would be working on any project that I find cool and impactful for an extensive amount of time, and hopefully get one or two high impact publications out of it as a bonus.
+
+## Have you worked on publicly available web or mobile applications you can share? If so, please explain in what capacity you have contributed.
+
+I don't have any public facing web of mobile applications that can be accessed immediately beyond [my personal file server](https://jjshoots.ddns.net:8190/) available 1000 to 1600 JST everyday.
+However, I have many open source projects that are being used by multiple communities.
+
+As an author, some highlight project include:
+- [Remote ID Spoofer](https://github.com/jjshoots/RemoteIDSpoofer) - a proof of concept project to prove that the current Remote ID implementation for UAV tracking is a badly implemented solution to a terrible idea.
+- [PyFlyt](https://taijunjet.com/PyFlyt/documentation.html) - a UAV simulation tool for reinforcement learning.
+- [SAMTool](https://github.com/jjshoots/SAMtool) - a segmentation dataset creation tool powered by Meta's Segment Anything Model that can be hosted in the browser.
+
+As a core contributor:
+- [PettingZoo](https://pettingzoo.farama.org/index.html) - an API standard for multi-agent reinforcement learning
+- 
+
 ## Please share which fields in AI are you most interested in working on and why?
 ## Please share any academic publications you might have in the field of machine learning (optional)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
