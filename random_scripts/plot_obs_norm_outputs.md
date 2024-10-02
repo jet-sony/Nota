@@ -26,11 +26,11 @@ class ObsNormBlock(DSDLayer, tf.keras.layers.Layer):
 
         # HACK IN BLOCK START
         self.counter += 1
-        if self.counter > 100:
+        if self.counter > 100:  # skip the first few steps to skip initialization data
             self.accumulator_before.append(inputs.numpy())
             self.accumulator_after.append(outputs.numpy())
 
-        if self.counter > 500:
+        if self.counter > 500:  # gather about 40 seconds of data
             if self.obs_key == "obs":
                 import matplotlib.pyplot as plt
                 before_values = np.concatenate(self.accumulator_before, axis=0)
@@ -39,22 +39,22 @@ class ObsNormBlock(DSDLayer, tf.keras.layers.Layer):
                 fig, axs = plt.subplots(2, 2, figsize=(14, 10))
 
                 # mean before
-                mean_before = before_values.mean(axis=-1)
+                mean_before = before_values.mean(axis=0)
                 axs[0, 0].bar(range(len(mean_before)), mean_before)
                 axs[0, 0].set_title("Mean Before", fontsize=14)
 
                 # variance before
-                var_before = before_values.var(axis=-1)
+                var_before = before_values.var(axis=0)
                 axs[1, 0].bar(range(len(var_before)), var_before)
                 axs[1, 0].set_title("Variance Before", fontsize=14)
 
                 # mean after
-                mean_after = after_values.mean(axis=-1)
+                mean_after = after_values.mean(axis=0)
                 axs[0, 1].bar(range(len(mean_after)), mean_after)
                 axs[0, 1].set_title("Mean After", fontsize=14)
 
                 # variance after
-                var_after = after_values.mean(axis=-1)
+                var_after = after_values.var(axis=0)
                 axs[1, 1].bar(range(len(var_after)), var_after)
                 axs[1, 1].set_title("Variance After", fontsize=14)
 
