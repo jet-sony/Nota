@@ -9,7 +9,6 @@ class ObsNormBlock(DSDLayer, tf.keras.layers.Layer):
 
     def __init__(self, num_batch_dims: int = 1, obs_key: str = "obs"):
         super().__init__(name="ObsNormBlock")
-        tf.config.run_functions_eagerly(True)
         self.num_batch_dims = num_batch_dims
         self.obs_key = obs_key
 
@@ -29,10 +28,12 @@ class ObsNormBlock(DSDLayer, tf.keras.layers.Layer):
         # HACK IN BLOCK START
         self.counter += 1
         if self.counter > 100:
+            print(self.obs_mean.numpy())
+            exit()
             self.accumulator_before.append(inputs.numpy())
             self.accumulator_after.append(outputs.numpy())
 
-        if self.counter > 2000:
+        if self.counter > 200:
             before_values = np.concatenate(self.accumulator_before, axis=0)
             after_values = np.concatenate(self.accumulator_after, axis=0)
             print("Obs key:")
@@ -51,4 +52,5 @@ class ObsNormBlock(DSDLayer, tf.keras.layers.Layer):
         # HACK IN BLOCK END
 
         return outputs
+
 ```
