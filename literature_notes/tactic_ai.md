@@ -36,11 +36,12 @@ An AI model that can
 1. Receiving Player Prediction
    - 22 players, select top 3, 78.2% prediction accuracy
   
-## Architecture
+### Architecture
 
 1. Controlled Refinement
    - Is it not possible to just use gradient descent to perturb player locations? Or some form of diffusion process using the gradients?
    - Can then easily control amount of improvement
+2. They don't use timeseries data, only time instance data (I think). No RNN / Hidden state / Temporal attention
 
 ## Unclear Parts
 
