@@ -1,10 +1,12 @@
 ### To be placed in `obs_norm.py`
 ```py
 class ObsNormBlock(DSDLayer, tf.keras.layers.Layer):
+    obs_key: str
     num_batch_dims: int
+
     obs_mean: tf.Variable
     obs_var: tf.Variable
-    obs_key: str
+    num_transitions: tf.Variable
 
     def __init__(self, num_batch_dims: int = 1, obs_key: str = "obs"):
         super().__init__(name="ObsNormBlock")
@@ -30,40 +32,65 @@ class ObsNormBlock(DSDLayer, tf.keras.layers.Layer):
             self.accumulator_before.append(inputs.numpy())
             self.accumulator_after.append(outputs.numpy())
 
-        if self.counter > 500:  # gather about 40 seconds of data
+        if self.counter > 3000:  # gather about 40 seconds of data
             if self.obs_key == "obs":
                 import matplotlib.pyplot as plt
                 before_values = np.concatenate(self.accumulator_before, axis=0)
                 after_values = np.concatenate(self.accumulator_after, axis=0)
 
-                fig, axs = plt.subplots(2, 2, figsize=(14, 10))
+                # create the figure and axes (2 rows, 1 column)
+                fig, axs = plt.subplots(2, 1, figsize=(120, 40))
 
                 # mean before
                 mean_before = before_values.mean(axis=0)
-                axs[0, 0].bar(range(len(mean_before)), mean_before)
-                axs[0, 0].set_title("Mean Before", fontsize=14)
-
-                # variance before
-                var_before = before_values.var(axis=0)
-                axs[1, 0].bar(range(len(var_before)), var_before)
-                axs[1, 0].set_title("Variance Before", fontsize=14)
+                axs[0].bar(range(len(xtick_labels)), mean_before)
+                axs[0].set_title("Mean Before", fontsize=100)
+                axs[0].set_yscale('log')
+                axs[0].set_xticks(range(len(xtick_labels)))
+                axs[0].set_xticklabels(xtick_labels, rotation=90, fontsize=8)
+                axs[0].tick_params(axis='y', labelsize=30)
 
                 # mean after
                 mean_after = after_values.mean(axis=0)
-                axs[0, 1].bar(range(len(mean_after)), mean_after)
-                axs[0, 1].set_title("Mean After", fontsize=14)
+                axs[1].bar(range(len(xtick_labels)), mean_after)
+                axs[1].set_title("Mean After", fontsize=100)
+                axs[1].set_yscale('log')
+                axs[1].set_xticks(range(len(xtick_labels)))
+                axs[1].set_xticklabels(xtick_labels, rotation=90, fontsize=8)
+                axs[1].tick_params(axis='y', labelsize=30)
 
-                # variance after
-                var_after = after_values.var(axis=0)
-                axs[1, 1].bar(range(len(var_after)), var_after)
-                axs[1, 1].set_title("Variance After", fontsize=14)
+                plt.savefig("mean_before_after.pdf", dpi=300)
+                plt.close()
 
-                for ax in axs.flat:
-                    ax.tick_params(axis='both', which='major', labelsize=10)
-                plt.show()
+                # create the figure and axes (2 rows, 1 column)
+                fig, axs = plt.subplots(2, 1, figsize=(120, 30))
+
+                # var before
+                mean_before = before_values.var(axis=0)
+                axs[0].bar(range(len(xtick_labels)), mean_before)
+                axs[0].set_title("Var Before", fontsize=100)
+                axs[0].set_yscale('log')
+                axs[0].set_xticks(range(len(xtick_labels)))
+                axs[0].set_xticklabels(xtick_labels, rotation=90, fontsize=8)
+                axs[0].tick_params(axis='y', labelsize=30)
+
+                # var after
+                mean_after = after_values.var(axis=0)
+                axs[1].bar(range(len(xtick_labels)), mean_after)
+                axs[1].set_title("Var After", fontsize=100)
+                axs[1].set_yscale('log')
+                axs[1].set_xticks(range(len(xtick_labels)))
+                axs[1].set_xticklabels(xtick_labels, rotation=90, fontsize=8)
+                axs[1].tick_params(axis='y', labelsize=30)
+
+                plt.savefig("var_before_after.pdf", dpi=300)
+                plt.close()
+                exit()
+
         # HACK IN BLOCK END
 
         return outputs
+
 ```
 
 ### Trajectory Script
