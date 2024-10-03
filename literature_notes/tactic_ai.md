@@ -1,0 +1,25 @@
+# Tactic AI
+
+## Domain knowledge
+
+1. Corner kicks are set pieces
+2. Set pieces are relatively fixed starting points, ie: $s_0$
+3. Corner kicks are nice because they are *frequent, predictable, short horizon*
+
+## What is it?
+
+An AI model that can
+1. predict outcomes of outcomes of corner kicks
+2. Cluster past demonstrations for retrieval
+3. Generate recommendations to have better performance
+
+## How is it tested
+
+1. Receiver prediction - who first receives the ball
+2. Shot prediction -
+3. Tactic recommendation -
+
+## Technologies used
+
+1. Graph representation + neural networks
+2. Geometric DL for geometry invariance
