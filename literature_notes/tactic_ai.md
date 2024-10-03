@@ -41,3 +41,7 @@ An AI model that can
 1. Controlled Refinement
    - Is it not possible to just use gradient descent to perturb player locations? Or some form of diffusion process using the gradients?
    - Can then easily control amount of improvement
+
+## Unclear Parts
+
+1. Group convolution architecture
