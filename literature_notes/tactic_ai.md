@@ -31,3 +31,7 @@ An AI model that can
 1. Ball information as feature
 2. Player profiles
 
+### Performance
+
+1. Receiving Player Prediction
+   - 22 players, select top 3, 78.2% prediction accuracy
