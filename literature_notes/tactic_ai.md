@@ -23,3 +23,11 @@ An AI model that can
 
 1. Graph representation + neural networks
 2. Geometric DL for geometry invariance
+
+## Easy improvements
+
+### Better features (not very applicable, they probably tried a lot):
+
+1. Ball information as feature
+2. Player profiles
+
