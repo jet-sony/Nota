@@ -30,11 +30,11 @@ where $q$ is the noising process
 
 ---
 
-### Some Math
+### Some Math 
 
 **Forward diffusion** (noising) process is formally defined as:
 
-$$
+$$ 
   q(x | x_{t-1}) = \mathcal{N} (\sqrt{1 - \beta_t} x_{t-1}, \beta_t I)
 $$
 ie: scale down original image, add noise.
