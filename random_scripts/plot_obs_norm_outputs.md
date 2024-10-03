@@ -11,14 +11,14 @@ class ObsNormBlock(DSDLayer, tf.keras.layers.Layer):
     def __init__(self, num_batch_dims: int = 1, obs_key: str = "obs"):
         super().__init__(name="ObsNormBlock")
         self.num_batch_dims = num_batch_dims
-        self.obs_key = obs_key
+        self.obs _key = obs_key
 
         # HACK IN BLOCK START
-        self.counter: int = 0
+        self.co unter: int = 0
         self.accumulator_before: list[np.ndarray] = []
         self.accumulator_after: list[np.ndarray] = []
         import tensorflow as tf
-        tf.config.run_functions_eagerly(True)
+        tf .config.run_functions_eagerly(True)
         # HACK IN BLOCK END
 
     def call(self, inputs: TFND, **kwargs: Any) -> tf.Tensor:
@@ -26,23 +26,23 @@ class ObsNormBlock(DSDLayer, tf.keras.layers.Layer):
             tf.cast(tf.sqrt(self.obs_var + 1e-4), dtype=inputs.dtype)
         )
 
-        # HACK IN BLOCK START
+        # HACK IN BL OCK START
         self.counter += 1
         if self.counter > 100:  # skip the first few steps to skip initialization data
             self.accumulator_before.append(inputs.numpy())
             self.accumulator_after.append(outputs.numpy())
 
         if self.counter > 3000:  # gather about 40 seconds of data
-            if self.obs_key == "obs":
+            if self .obs_key == "obs":
                 import matplotlib.pyplot as plt
                 before_values = np.concatenate(self.accumulator_before, axis=0)
-                after_values = np.concatenate(self.accumulator_after, axis=0)
+                after_values = np.concatenate(self.ac cumulator_after, axis=0)
 
                 # create the figure and axes (2 rows, 1 column)
-                fig, axs = plt.subplots(2, 1, figsize=(120, 40))
+                fig, axs = plt.subplots(2, 1, figsize=(120, 40)) 
 
                 # mean before
-                mean_before = before_values.mean(axis=0)
+                mean_be fore = before_values.mean(axis=0)
                 axs[0].bar(range(len(xtick_labels)), mean_before)
                 axs[0].set_title("Mean Before", fontsize=100)
                 axs[0].set_yscale('log')
