@@ -11,14 +11,14 @@ class ObsNormBlock(DSDLayer, tf.keras.layers.Layer):
     def __init__(self, num_batch_dims: int = 1, obs_key: str = "obs"):
         super().__init__(name="ObsNormBlock")
         self.num_batch_dims = num_batch_dims
-        self.obs _key = obs_key
+        self.obs_key = obs_key
 
         # HACK IN BLOCK START
-        self.co unter: int = 0
+        self.counter: int = 0
         self.accumulator_before: list[np.ndarray] = []
         self.accumulator_after: list[np.ndarray] = []
         import tensorflow as tf
-        tf .config.run_functions_eagerly(True)
+        tf.config.run_functions_eagerly(True)
         # HACK IN BLOCK END
 
     def call(self, inputs: TFND, **kwargs: Any) -> tf.Tensor:
@@ -26,7 +26,7 @@ class ObsNormBlock(DSDLayer, tf.keras.layers.Layer):
             tf.cast(tf.sqrt(self.obs_var + 1e-4), dtype=inputs.dtype)
         )
 
-        # HACK IN BL OCK START
+        # HACK IN BLOCK START
         self.counter += 1
         if self.counter > 100:  # skip the first few steps to skip initialization data
             self.accumulator_before.append(inputs.numpy())
