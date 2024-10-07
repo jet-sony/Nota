@@ -38,8 +38,14 @@ $$
   \alpha_t = 1 - \beta_t \\
   \bar{\alpha}_t = \Pi_{s=1}^t \alpha_t
 $$
-
-The most common way to schedule $\alpha_t$ is 
+and therefore 
+$$
+  \alpha_t = \bar{\alpha}_t / \bar{\alpha}_{t+1}
+$$
+The most common way to schedule $\alpha_t$ is to use:
+$$
+\bar{\alpha}_t =  \cos(\frac{\pi t}{2 T})
+$$
 
 **Forward diffusion** (noising) process is formally defined as:
 
