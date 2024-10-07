@@ -32,10 +32,17 @@ where $q$ is the noising process
 
 ### Some Math 
 
+**Hyperparameters**
+
+$$
+  \alpha_t = 1 - \beta_t \\
+  \bar{\alpha}_t = \Pi_{s=1}^t \alpha_t
+$$
+
 **Forward diffusion** (noising) process is formally defined as:
 
 $$ 
-  q(x | x_{t-1}) = \mathcal{N} (\sqrt{1 - \beta_t} x_{t-1}, \beta_t I)
+  q(x | x_{t-1}) = \mathcal{N} (\sqrt{\alpha_t} x_{t-1}, (1 - \alpha_t) I)
 $$
 ie: scale down original image, add noise.
 
@@ -47,7 +54,7 @@ $$
 where the mean predictor is a predictor for just the noise:
 $$
   \mu_\theta (x_t, t) = \frac{1}{\alpha_t} \left(
-    x_t - \frac{\beta_t}{\sqrt{1 - \alpha_i}} \epsilon_\theta(x_t, t) 
+    x_t - \frac{1 - \alpha_t}{\sqrt{1 - \bar{\alpha}_i}} \epsilon_\theta(x_t, t) 
   \right)
 $$
 ie: we predict the noise scaled and offset by some scheduler.
@@ -64,7 +71,7 @@ Which just boils down to:
 $$
   \mathcal{L} = \mathbb{E}_{t \sim \mathcal{U}, \epsilon \sim \mathcal{N}(0, I), (x_0) \sim \mathcal{D}}
     \left[ 
-      || \epsilon - \epsilon_\theta (\sqrt\alpha_t x_t + \sqrt{1 - \alpha_t} \epsilon, x_t, t) || ^ 2
+      || \epsilon - \epsilon_\theta (\sqrt{\bar{\alpha}_t} x_t + \sqrt{1 - \bar{\alpha}_t} \epsilon, x_t, t) || ^ 2
     \right]
 $$
 ie: sample data, apply random noise schedule, predict noise.
