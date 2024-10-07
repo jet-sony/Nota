@@ -192,6 +192,8 @@ Basically, we condition the diffusion model on an embedding vector (usually obta
 Off-policy RL's goal is to learn a policy that maximizes the Q values from trajectories within an offline dataset.
 To accomplish this, you can inject the Q value into the learning policy in the same manner as CFD or CGD:
 
+> Assume that $x$ = $a$ for notational convention
+
 $$
   
 $$
