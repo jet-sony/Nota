@@ -84,7 +84,7 @@ p_\theta (x_{0:T}
 $$
 Which just boils down to:
 $$
-  \mathcal{L} = \mathbb{E}_{t \sim \mathcal{U}, \epsilon \sim \mathcal{N}(0, I), (x_0) \sim \mathcal{D}}
+  \mathcal{L}_d = \mathbb{E}_{t \sim \mathcal{U}, \epsilon \sim \mathcal{N}(0, I), (x_0) \sim \mathcal{D}}
     \left[ 
       || \epsilon - \epsilon_\theta (\sqrt{\bar{\alpha}_t} x_t + \sqrt{1 - \bar{\alpha}_t} \epsilon, t) || ^ 2
     \right]
@@ -197,8 +197,12 @@ To accomplish this, you can inject the Q value into the learning policy in the s
 ### Option 1: direct end-point optimization
 
 $$
-  \mathcal{L}
+  \mathcal{L}(\theta) = \mathcal{L}_d - k \cdot \mathbb{E}_{\mathbf{s} \sim \mathcal{D}, a \sim \mathcal{\pi_\theta}} [Q(s, a)]
 $$
+
+Downsides, must differentiate through entire chain.
+
+![.images/49e27853-467d-46ea-9223-fce28d176138.png](.images/49e27853-467d-46ea-9223-fce28d176138.png)
 
 
 
