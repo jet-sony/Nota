@@ -56,7 +56,7 @@ ie: scale down original image, add noise.
 
 We can generalize this to n-step forward diffusion:
 $$
-  q(x_t | x_0) = \mathcal{N} (\sqrt{\bar{\alpha}_t} x_{t-1}, \sqrt{1 - \bar{\alpha}_t} I)
+  q(x_t | x_0) = \mathcal{N} (\sqrt{\bar{\alpha}_t} x_0, \sqrt{1 - \bar{\alpha}_t} I)
 $$
 
 **Reverse diffusion** process is formally defined as:
@@ -213,9 +213,13 @@ Downsides: must differentiate through entire chain.
 
 Recall that the noised state can be represented as:
 $$
-  a_t = \sqrt()
+  a_t = \mathcal{N} (\sqrt{\bar{\alpha}_t} a_0, \sqrt{1 - \bar{\alpha}_t} I)
 $$
-
+Therefore, we can also approximate the result of reverse diffusion using one-step approximation:
+$$
+  \pi_\theta(a) = \frac{a_t}{\sqrt{\bar{\alpha}_t}} - \frac{\sqrt{1 - \bar{\alpha}_t}}{\sqrt{\bar{\alpha}_k}} \epsilon_\theta (a_t, t)
+$$
+And then use that to directly optimize the Q value.
 
 
 
