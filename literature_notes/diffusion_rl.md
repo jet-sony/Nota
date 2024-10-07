@@ -78,7 +78,7 @@ ie: sample data, apply random noise schedule, predict noise.
 
 **During sampling**, we first sample $x_T \sim \mathcal{N} (0, I)$, then do:
 $$
-  x_{t-1} | x_t = \frac{x_t}{\sqrt{\alpha_t}} - \frac{1 - \alpha_t}{\sqrt{\alpha_t (1 - \bar{\alpha}_t)}} \epsilon_\theta (x_t, t) + \sqrt{\beta_t} \epsilon\\
+  x_{t-1} | x_t = \frac{x_t}{\sqrt{\alpha_t}} - \frac{1 - \alpha_t}{\sqrt{\alpha_t (1 - \bar{\alpha}_t)}} \epsilon_\theta (x_t, t) \\
 $$
 where $\epsilon \sim \mathcal{N}(0, I)$ at every step.
 There are various methods of scheduling $\beta_t$.
