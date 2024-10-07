@@ -49,18 +49,22 @@ ie: scale down original image, add noise.
 **Reverse diffusion** process is formally defined as:
 
 $$
-  p_\theta (x_{t-1} | x_t) = \mathcal{N} (\mu_\theta (x_t, t), \sigma_\theta (x_t, t))
+  p_\theta (x_{t-1} | x_t) = \mathcal{N} (\mu(x_t, t), \sigma (x_t, t))
 $$
 where the mean is the base noise minus a predicted noise:
 $$
-  \mu_\theta (x_t, t) = \frac{1}{\alpha_t} \left(
-    x_t - \frac{1 - \alpha_t}{\sqrt{1 - \bar{\alpha}_i}} \epsilon_\theta(x_t, t) 
+  \mu(x_t, t) = \frac{1}{\alpha_t} \left(
+    x_t - \frac{1 - \alpha_t}{\sqrt{1 - \bar{\alpha}_i}} \mu_\theta(x_t, t) 
   \right)
 $$
 and variance is a scaled variance:
 $$
-  \sigma_\theta = 
+  \sigma(x_t, t) = (1 - \alpha) \mathbf{I}
 $$
+or
+$$
+  \sigma(x_t, t) = \sigma_\theta(x_t, t)
+$$ 
 
 **The optimization objective** is to generally optimize the ELBO:
 $$
