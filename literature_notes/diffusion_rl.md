@@ -50,9 +50,14 @@ $$
 **Forward diffusion** (noising) process is formally defined as:
 
 $$ 
-  q(x | x_{t-1}) = \mathcal{N} (\sqrt{\alpha_t} x_{t-1}, (1 - \alpha_t) I)
+  q(x_t | x_{t-1}) = \mathcal{N} (\sqrt{\alpha_t} x_{t-1}, (1 - \alpha_t) I)
 $$
 ie: scale down original image, add noise.
+
+We can generalize this to n-step forward diffusion:
+$$
+  q(x_t | x_0) = \mathcal{N} (\sqrt{\bar{\alpha}_t} x_{t-1}, \sqrt{1 - \bar{\alpha}_t} I)
+$$
 
 **Reverse diffusion** process is formally defined as:
 
@@ -206,8 +211,9 @@ Downsides: must differentiate through entire chain.
 
 ### Option 2: [one-step approximation](https://proceedings.neurips.cc/paper_files/paper/2023/file/d45e0bfb5a39477d56b55c0824200008-Paper-Conference.pdf)
 
+Recall that the noised state can be represented as:
 $$
-  
+  a_t = \sqrt()
 $$
 
 
