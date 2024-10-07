@@ -223,7 +223,7 @@ And then use that to directly optimize the Q value.
 
 This form can be generalized to other off-policy algorithms, such as IQL, AWR, CRR, using the following (after derivations):
 $$
-  \mathcal{L}(\theta) = f(Q_\phi (s, a)) || a - \hat{a}_0 || ^ 2
+  \mathcal{L}(\theta) = f(s, a, \hat{a}_0) || a - \hat{a}_0 || ^ 2
 $$
 where $a$ is the action sampled from the dataset, and $\hat{a}_0$ is the policy approximated action.
 
