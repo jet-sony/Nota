@@ -217,9 +217,15 @@ $$
 $$
 Therefore, we can also approximate the result of reverse diffusion using one-step approximation:
 $$
-  \pi_\theta(a) = \frac{a_t}{\sqrt{\bar{\alpha}_t}} - \frac{\sqrt{1 - \bar{\alpha}_t}}{\sqrt{\bar{\alpha}_k}} \epsilon_\theta (a_t, t)
+  \pi_\theta(\hat{a}_0) = \frac{a_t}{\sqrt{\bar{\alpha}_t}} - \frac{\sqrt{1 - \bar{\alpha}_t}}{\sqrt{\bar{\alpha}_k}} \epsilon_\theta (a_t, t)
 $$
 And then use that to directly optimize the Q value.
+
+This form can be generalized to other off-policy algorithms, such as IQL, AWR, CRR, using the following (after derivations):
+$$
+  \mathcal{L}(\theta) = f(Q_\phi (s, a)) || a - \hat{a}_0 || ^ 2
+$$
+where $a$ is the action sampled from the dataset, and $\hat{a}_0$ is the policy approximated action.
 
 ![.images/e1789ef5-b4fb-4c26-8cad-1a770bd8861b.png](.images/e1789ef5-b4fb-4c26-8cad-1a770bd8861b.png)
 
