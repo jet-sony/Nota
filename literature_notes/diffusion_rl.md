@@ -199,7 +199,7 @@ To accomplish this, you can inject the Q value into the learning policy in the s
 
 > Assume that $x$ = $a$ for notational convention
 
-### Option 1: [direct endpoint optimization](https://arxiv.org/pdf/2208.06193)
+### Option 1: [direct endpoint optimization](https://arxiv.org/pdf/2208.06193) (Diff QL)
 
 $$
   \mathcal{L}(\theta) = \mathcal{L}_d - k \cdot \mathbb{E}_{\mathbf{s} \sim \mathcal{D}, a \sim \mathcal{\pi_\theta}} [Q(s, a)]
@@ -209,7 +209,7 @@ Downsides: must differentiate through entire chain.
 
 ![.images/49e27853-467d-46ea-9223-fce28d176138.png](.images/49e27853-467d-46ea-9223-fce28d176138.png)
 
-### Option 2: [one-step approximation](https://proceedings.neurips.cc/paper_files/paper/2023/file/d45e0bfb5a39477d56b55c0824200008-Paper-Conference.pdf)
+### Option 2: [one-step approximation](https://proceedings.neurips.cc/paper_files/paper/2023/file/d45e0bfb5a39477d56b55c0824200008-Paper-Conference.pdf) (EDP)
 
 Recall that the noised state can be represented as:
 $$
