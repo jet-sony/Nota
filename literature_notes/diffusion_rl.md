@@ -194,8 +194,10 @@ To accomplish this, you can inject the Q value into the learning policy in the s
 
 > Assume that $x$ = $a$ for notational convention
 
+### Option 1: direct end-point optimization
+
 $$
-  
+  \mathcal{L}
 $$
 
 
