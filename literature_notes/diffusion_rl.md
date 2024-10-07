@@ -204,7 +204,11 @@ Downsides: must differentiate through entire chain.
 
 ![.images/49e27853-467d-46ea-9223-fce28d176138.png](.images/49e27853-467d-46ea-9223-fce28d176138.png)
 
-### Option 2: 
+### Option 2: [one-step approximation](https://proceedings.neurips.cc/paper_files/paper/2023/file/d45e0bfb5a39477d56b55c0824200008-Paper-Conference.pdf)
+
+$$
+  
+$$
 
 
 
