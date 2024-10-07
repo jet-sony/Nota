@@ -39,6 +39,8 @@ $$
   \bar{\alpha}_t = \Pi_{s=1}^t \alpha_t
 $$
 
+The most common way to schedule $\alpha_t$ is 
+
 **Forward diffusion** (noising) process is formally defined as:
 
 $$ 
