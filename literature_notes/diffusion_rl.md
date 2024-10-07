@@ -61,7 +61,7 @@ and variance is a scaled variance:
 $$
   \sigma(x_t, t) = (1 - \alpha) \mathbf{I}
 $$
-or
+or in the learned variance case:
 $$
   \sigma(x_t, t) = \sigma_\theta(x_t, t)
 $$ 
@@ -78,8 +78,12 @@ Which just boils down to:
 $$
   \mathcal{L} = \mathbb{E}_{t \sim \mathcal{U}, \epsilon \sim \mathcal{N}(0, I), (x_0) \sim \mathcal{D}}
     \left[ 
-      || \epsilon - \epsilon_\theta (\sqrt{\bar{\alpha}_t} x_t + \sqrt{1 - \bar{\alpha}_t} \epsilon, x_t, t) || ^ 2
+      || \epsilon - \epsilon_\theta (\sqrt{\bar{\alpha}_t} x_t + \sqrt{1 - \bar{\alpha}_t} \epsilon, t) || ^ 2
     \right]
+$$
+where:
+$$
+  \epsilon_\theta(x_t, t) \sim \mathcal{N} (\mu_\theta (x_t, t), \sigma_\theta(x_t, t) )
 $$
 ie: sample data, apply random noise schedule, predict noise.
 
@@ -87,8 +91,6 @@ ie: sample data, apply random noise schedule, predict noise.
 $$
   x_{t-1} | x_t = \frac{x_t}{\sqrt{\alpha_t}} - \frac{1 - \alpha_t}{\sqrt{\alpha_t (1 - \bar{\alpha}_t)}} \epsilon_\theta (x_t, t) \\
 $$
-where $\epsilon \sim \mathcal{N}(0, I)$ at every step.
-There are various methods of scheduling $\beta_t$.
 
 ---
 
