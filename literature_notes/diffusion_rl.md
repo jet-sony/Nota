@@ -221,6 +221,9 @@ $$
 $$
 And then use that to directly optimize the Q value.
 
+![.images/e1789ef5-b4fb-4c26-8cad-1a770bd8861b.png](.images/e1789ef5-b4fb-4c26-8cad-1a770bd8861b.png)
+
+![.images/7d836be5-17e0-4b17-9407-dcbeeade4282.png](.images/7d836be5-17e0-4b17-9407-dcbeeade4282.png)
 
 
 
