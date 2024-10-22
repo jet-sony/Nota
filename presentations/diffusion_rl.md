@@ -57,3 +57,23 @@ $$
 
 ---
 
+### Implementation Overview
+
+Forward diffusion (noising)
+$$
+  q(x_t | x_{t-1}) = \mathcal{N} (\sqrt{\alpha_t} x_{t-1}, (1 - \alpha_t) I)
+$$
+Can be generalized to
+$$
+  q(x_t | x_0) = \mathcal{N} (\sqrt{\bar{\alpha}_t} x_0, \sqrt{1 - \bar{\alpha}_t} I)
+$$
+
+Reverse diffusion (denoising)
+$$
+  p_\theta (x_{t-1} | x_t) = \mathcal{N} (\mu(x_t, t), \sigma (x_t, t))
+$$
+
+
+---
+
+---
