@@ -18,6 +18,8 @@ where $q$ is the noising process
 
 ![.images/fcd5fa20-4c5f-450d-bd0e-ddb1010e83fc.png](.images/fcd5fa20-4c5f-450d-bd0e-ddb1010e83fc.png)
 
+![.images/6512f93c-e667-41f1-a05c-5188fc693e07.png](.images/6512f93c-e667-41f1-a05c-5188fc693e07.png)
+
 **Why does this matter?**
 
 - Because you're not constrained by distributions that limit representation power:
