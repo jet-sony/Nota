@@ -23,6 +23,11 @@ header: Sony AI - Confidential
 
 A technique for modelling complex multidimensional distributions.
 
+- Reverse diffusion (noising)
 $$
-
+  
+$$
+- Forward diffusion (denoising)
+$$
+  p_\theta(x_0) = \Pi_{t=1}^T p_\theta(x_{t-1} | x_t)
 $$
