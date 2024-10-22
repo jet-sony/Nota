@@ -46,7 +46,9 @@ $$
 
 ---
 
-![bg height:300px](.images/0c23a328-072c-41b6-8f5d-e8e7eaf302a6.png)
+# header here
+
+![height:300px](.images/0c23a328-072c-41b6-8f5d-e8e7eaf302a6.png)
 
 ---
 
