@@ -36,4 +36,12 @@ $$
 
 ---
 
+## Intuition
+
+Can choose from $n$ different modalities at every denoising step.
+
+![bg right:50% height:400px](.images/12473972-a33d-44e7-83de-8dd16ff23f4f.png)
+
 ---
+
+![bg height:300px](.images/0c23a328-072c-41b6-8f5d-e8e7eaf302a6.png)
