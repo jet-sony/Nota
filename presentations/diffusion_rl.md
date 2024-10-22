@@ -23,7 +23,7 @@ header: Sony AI - Confidential
 
 A technique for modelling complex multidimensional distributions.
 
-![bg right:50% height:200px](https://lilianweng.github.io/posts/2021-07-11-diffusion-models/DDPM.png)
+![bg right:50% height:300px](.images/40cce28f-12e8-437c-bcd2-f3b5cb15ef06.png)
 
 - Forward diffusion (noising)
 $$
