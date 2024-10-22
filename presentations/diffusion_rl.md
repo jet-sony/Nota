@@ -52,7 +52,7 @@ $$
 
 ---
 
-### Implementation Overview
+### Implementation 
 
 Forward diffusion (noising)
 $$
@@ -70,6 +70,6 @@ $$
 
 ---
 
-# do something something really fast
+
 
 ---
