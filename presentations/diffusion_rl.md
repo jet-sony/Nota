@@ -3,6 +3,13 @@ marp: true
 paginate: true
 header: Sony AI - Confidential
 
+<style>
+img[alt~="center"] {
+  display: block;
+  margin: 0 auto;
+}
+</style>
+
 ---
 
 # Diffusion RL
@@ -36,7 +43,7 @@ $$
 
 ---
 
-## Intuition
+### Intuition
 
 - No mode collapse.
 - No naive distributions.
