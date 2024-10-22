@@ -38,7 +38,9 @@ $$
 
 ## Intuition
 
-Can choose from $n$ different modalities at every denoising step.
+- No mode collapse.
+- No naive distributions.
+- Theoretically infinite modes.
 
 ![bg right:50% height:400px](.images/12473972-a33d-44e7-83de-8dd16ff23f4f.png)
 
