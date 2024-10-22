@@ -23,6 +23,10 @@ header: Sony AI - Confidential
 
 A technique for modelling complex multidimensional distributions.
 
+<div style="text-align: center;">
+  <img src="https://lilianweng.github.io/posts/2021-07-11-diffusion-models/DDPM.png" alt="drawing" height="200"/>
+</div>
+
 - Reverse diffusion (noising)
 $$
   q(x_T) = \Pi_{t=1}^T q(x_t | x_{t-1})
@@ -30,6 +34,8 @@ $$
 - Forward diffusion (denoising)
 $$
   p_\theta(x_0) = \Pi_{t=1}^T p_\theta(x_{t-1} | x_t)
-
 $$
 
+---
+
+---
