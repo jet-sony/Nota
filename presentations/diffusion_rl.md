@@ -3,13 +3,6 @@ marp: true
 paginate: true
 header: Sony AI - Confidential
 
-<style>
-img[alt~="center"] {
-  display: block;
-  margin: 0 auto;
-}
-</style>
-
 ---
 
 # Diffusion RL
@@ -73,7 +66,8 @@ $$
   p_\theta (x_{t-1} | x_t) = \mathcal{N} (\mu(x_t, t), \sigma (x_t, t))
 $$
 
-
 ---
+
+# do something
 
 ---
