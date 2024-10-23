@@ -74,7 +74,7 @@ $$
 
 Diffusion for n-step action prediction
 
-![bg right:50% width:700px](.images/50578a69-635f-45d9-9443-8db398f34f53.png)
+![bg right:50% width:500px](.images/50578a69-635f-45d9-9443-8db398f34f53.png)
 
 ---
 
