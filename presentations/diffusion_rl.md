@@ -72,6 +72,8 @@ $$
 
 # Diffusion Policies (Behaviour Cloning)
 
+Diffusion for n-step action prediction
+
 ![bg right:50% width:900px](.images/619a2239-2a0c-4938-b9ac-271ea2c90cc0.png)
 
 ---
