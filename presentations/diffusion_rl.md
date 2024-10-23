@@ -81,7 +81,7 @@ Diffusion for n-step action prediction
 ## Policy Representation
 
 $$
-  
+  \pi(\mathbf{a}_{t, ... t+N} | \mathbf{s}_t) = 
 $$
 
 ---
