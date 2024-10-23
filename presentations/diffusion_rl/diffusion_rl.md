@@ -14,10 +14,8 @@ header: Sony AI - Confidential
 ## Agenda
 
 1. What is Diffusion?
-2. Diffusion Policy (Behaviour Cloning)
-3. Classifier Guided Diffusion
-4. Diffusion Offline RL
-5. Diffusion Online RL
+2. Diffusion Policies (Behaviour Cloning)
+3. Diffusion for Offline RL
 
 ---
 
@@ -46,9 +44,6 @@ $$
 
 ![bg right:50% height:400px](.images/12473972-a33d-44e7-83de-8dd16ff23f4f.png)
 
----
-
-![bg height:300px](.images/0c23a328-072c-41b6-8f5d-e8e7eaf302a6.png)
 
 ---
 
@@ -87,12 +82,12 @@ Diffusion for n-step action prediction
 
 ---
 
-## Policy Representation
+## Approach
 
 Let $\mathbf{A}_t = \mathbf{a}_{t, ... t+H}$, $\mathbf{O}_t = \mathbf{o}_{t, ... t+H}$, then
 
 $$
-  \pi(\mathbf{A}_t | \mathbf{O}_t) = \Pi_{k=1}^K p_\theta(\mathbf{A}_t^{n-1} | \mathbf{A}_t^n)
+  \pi(\mathbf{A}_t | \mathbf{O}_t) = \Pi_{k=1}^K p_\theta(\mathbf{A}_t^{n-1} | \mathbf{A}_t^n, \mathbf{O}_t)
 $$
 
 Where:
@@ -182,7 +177,83 @@ Baselines:
 
 ![bg right:50% width:900px](.images/619a2239-2a0c-4938-b9ac-271ea2c90cc0.png)
 
----
+Bootstrapping from offline data to perform better than offline data
 
 ---
 
+## Approach
+
+In a normal diffusion denoising, we follow gradient of log prob:
+
+$$
+  \mathbf{A}_{t-1} = a_t + \eta \nabla_{\mathbf{A}_t} \log p_\mathcal{D}(\mathbf{A}_t) + \epsilon
+$$
+
+In RL, we want to additionally follow gradient of Q value:
+
+$$
+  \mathbf{A}_{t-1} = a_t + \eta_1 \nabla_{\mathbf{A}_t} \log p_\mathcal{D}(\mathbf{A}_t) + \eta_2 \nabla_{\mathbf{A}_t} Q(\mathbf{O}_t, \mathbf{A}_t) + \epsilon
+$$
+
+To do that, we use this update rule:
+
+$$
+  \mathcal{L}_{\pi_\theta} = \mathcal{L}_{d} - \alpha \cdot \mathbb{E}_{\mathbf{s} \sim \mathcal{D}, \mathbf{A}_t \sim \pi_\theta} [Q_\phi (\mathbf{O}_t, \mathbf{A}_t)]
+$$
+
+<span style="color:red">This requires differentiating through diffusion chain.</span>
+
+---
+
+## Implementation
+
+- 3-layer MLP policy, 256 units
+- $\alpha = \frac{\eta}{\mathbb{E}_{(s, a)} \sim \mathcal{D} [| Q_\phi (\mathbf{O}, \mathbf{A}) |]}$
+- $H = 1$
+
+![bg right:60% width:600px](image-9.png)
+
+---
+
+
+![bg width:800px](image-11.png)
+
+---
+
+## Results
+
+![bg right:70% width:750px](image-10.png)
+
+---
+
+## Diffusion-QL without differentiating through chain
+
+![bg right:60% width:600px](image-12.png)
+
+---
+
+## Approach
+
+EDP steps only once w/ very large step size.
+
+Noising step:
+
+$$
+  \mathbf{A}_t^n = \sqrt{\bar{\alpha}^n} \mathbf{A}_t^0 + \sqrt{1 - \bar{\alpha}^n} \cdot \epsilon
+$$
+
+Sampling step:
+
+$$
+  \hat{\mathbf{A}}_t^0 = \frac{1}{\sqrt{\bar{\alpha}^n}} \mathbf{A}_t^n - \frac{\sqrt{1 - \bar{\alpha}^n}}{\sqrt{\bar{\alpha}^n}} \epsilon_\theta(\mathbf{A}_t^n, \mathbf{O}_t, n)
+$$
+
+---
+
+![bg right:60% width:700px](image-14.png)
+
+## Results
+
+![width:400px](image-13.png)
+
+---
