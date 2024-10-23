@@ -65,7 +65,7 @@ $$
 
 Reverse diffusion (denoising)
 $$
-  p_\theta (x_{t-1} | x_t) = \mathcal{N} (\mu(x_t, t), \sigma (x_t, t))
+  p_\theta (x_{t-1} | x_t) = \mathcal{N} (x_t - \epsilon(x_t, t), \sigma (x_t, t))
 $$
 
 ---
@@ -85,6 +85,7 @@ Diffusion for n-step action prediction
   - Push-T
   - Block Pushing
   - Franka Kitchen
+  - *Real world ->*
 
 ![bg right:50% width:600px](.images/2827db21-200b-450a-9d8f-546072224f1b.png)
 
