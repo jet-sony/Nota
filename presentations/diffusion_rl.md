@@ -74,7 +74,7 @@ $$
 
 Diffusion for n-step action prediction
 
-![bg right:50% width:900px](.images/619a2239-2a0c-4938-b9ac-271ea2c90cc0.png)
+![bg right:50% width:700px](.images/50578a69-635f-45d9-9443-8db398f34f53.png)
 
 ---
 
@@ -85,6 +85,12 @@ $$
 $$
 
 ---
+
+---
+
+# Diffusion Offline Reinforcement Learning
+
+![bg right:50% width:900px](.images/619a2239-2a0c-4938-b9ac-271ea2c90cc0.png)
 
 
 
