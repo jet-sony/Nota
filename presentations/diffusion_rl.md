@@ -78,6 +78,18 @@ Diffusion for n-step action prediction
 
 ---
 
+## Task Description
+
+- Pure behaviour cloning environments:
+  - Robomimic
+  - Push-T
+  - Block Pushing
+  - Franka Kitchen
+
+![bg right:50% width:600px](.images/2827db21-200b-450a-9d8f-546072224f1b.png)
+
+---
+
 ## Policy Representation
 
 $$
