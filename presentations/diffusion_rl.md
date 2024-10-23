@@ -78,7 +78,11 @@ Diffusion for n-step action prediction
 
 ---
 
-## 
+## Policy Representation
+
+$$
+  
+$$
 
 ---
 
