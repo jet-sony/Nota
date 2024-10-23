@@ -2,5 +2,5 @@
   "theme": "ayu-dark",
   "autoSaveIntervalSec": 60,
   "colorMode": "dark",
-  "vimMode": false
+  "vimMode": true
 }
