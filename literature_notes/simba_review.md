@@ -7,3 +7,5 @@
 5. Statistical significance not apparent
 6. Simba inverse ablation study
 7. Simba vs TDMPC2 on Humanoid bench worse sample efficiency
+8. Longer training for simba - 5M steps
+9. 
